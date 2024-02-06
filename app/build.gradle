@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "29.0.2"
+    compileSdk 34
+    buildToolsVersion = "34.0.0"
 
     defaultConfig {
         applicationId "com.tencent.ncnnyolov7"
@@ -19,6 +19,12 @@ android {
     }
 
     dependencies {
-        implementation 'com.android.support:support-v4:24.0.0'
+        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    }
+    namespace 'com.tencent.ncnnyolov7'
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
     }
 }
